@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vivências - Fonte de Prodígios</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .vivencias-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        .vivencias-intro p {
+            font-size: 1.1rem;
+            color: var(--texto);
+            opacity: 0.8;
+        }
+
+        /* Grid de Vivências Estilizado */
+        .vivencias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .vivencia-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--bege-dark);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .vivencia-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--vermelho);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.1);
+        }
+
+        .vivencia-img {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vivencia-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .vivencia-item:hover .vivencia-img img {
+            transform: scale(1.1);
+        }
+
+        .vivencia-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--vermelho);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            z-index: 10;
+        }
+
+        .vivencia-content {
+            padding: 25px;
+        }
+
+        .vivencia-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            color: var(--vermelho);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .vivencia-content p {
+            font-size: 0.95rem;
+            color: var(--texto);
+            margin-bottom: 20px;
+        }
+
+        .btn-ver-mais {
+            display: inline-block;
+            color: var(--vermelho);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn-ver-mais:hover {
+            color: var(--texto);
+        }
+
+        .btn-ver-mais i {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PRODÍGIOS</div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="vivencias.html">Vivências</a>
+            <a href="membro.html">Seja Membro</a>
+            <a href="contribuicoes.html">Contribuições</a>
+        </div>
+    </nav>
+
+    <header class="header-minimal">
+        <h1>Nossas <span class="text-vermelho">Vivências</span></h1>
+    </header>
+
+    <main class="container reveal">
+        <div class="vivencias-intro">
+            <p>Explore os momentos que marcam a jornada da nossa igreja. Cada foto e cada ministério representa um passo de fé e comunhão em nossa família.</p>
+        </div>
+
+        <div class="vivencias-grid">
+            <div class="vivencia-item">
+                <div class="vivencia-tag">Celebração</div>
+                <div class="vivencia-img">
+                    <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=800" alt="Culto de Celebração">
+                </div>
+                <div class="vivencia-content">
+                    <h3>Cultos de Adoração</h3>
+                    <p>Momentos intensos de louvor e a palavra viva de Deus que transforma corações todos os domingos.</p>
+                    <a href="#" class="btn-ver-mais">Ver Galeria <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="vivencia-item">
+                <div class="vivencia-tag">Missões</div>
+                <div class="vivencia-img">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" alt="Ação Social">
+                </div>
+                <div class="vivencia-content">
+                    <h3>Mãos que Ajudam</h3>
+                    <p>Nossa missão vai além das paredes. Levamos alimento, amor e a esperança de Cristo à nossa comunidade.</p>
+                    <a href="#" class="btn-ver-mais">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="vivencia-item">
+                <div class="vivencia-tag">Conexão</div>
+                <div class="vivencia-img">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224594?auto=format&fit=crop&q=80&w=800" alt="Ministério de Jovens">
+                </div>
+                <div class="vivencia-content">
+                    <h3>Juventude Prodígios</h3>
+                    <p>Uma geração que busca o Reino com ousadia, alegria e propósito. Conectando jovens ao Pai.</p>
+                    <a href="#" class="btn-ver-mais">Participar <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="vivencia-item">
+                <div class="vivencia-tag">Futuro</div>
+                <div class="vivencia-img">
+                    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800" alt="Ministério Infantil">
+                </div>
+                <div class="vivencia-content">
+                    <h3>Ministério Kids</h3>
+                    <p>Ensinando as crianças no caminho em que devem andar, com muita diversão e bíblia.</p>
+                    <a href="#" class="btn-ver-mais">Conhecer <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 - Igreja Missionária Fonte de Prodígios</p>
+        <div style="margin-top: 15px;">
+            <a href="#" style="color: var(--vermelho); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--vermelho); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>

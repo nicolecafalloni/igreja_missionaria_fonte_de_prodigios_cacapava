@@ -1,0 +1,105 @@
+:root {
+    --vermelho: #8b0000;
+    --vermelho-light: #bc1823;
+    --bege-fundo: #fdfaf5;
+    --bege-card: #f5f2eb;
+    --bege-dark: #d4c3a3;
+    --texto: #4a3b3b;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    color: var(--texto); 
+    background-color: var(--bege-fundo);
+    line-height: 1.6;
+}
+
+/* Navbar Profissional */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--white);
+    border-bottom: 1px solid var(--bege-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: var(--vermelho); letter-spacing: 2px; }
+
+.nav-links a {
+    color: var(--texto);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--vermelho); }
+
+/* Headers das Páginas */
+.header-minimal {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--bege-card);
+    border-bottom: 1px solid var(--bege-dark);
+}
+
+.header-minimal h1 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: var(--texto); }
+.text-vermelho { color: var(--vermelho); }
+
+/* Containers */
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+/* Grid de Cards (Sobre e Contribuições) */
+.m-v-cards, .contrib-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.m-v-card, .contrib-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--bege-dark);
+    transition: 0.3s;
+}
+
+.m-v-card:hover, .contrib-card:hover { transform: translateY(-5px); border-color: var(--vermelho); }
+
+/* PIX Box */
+.pix-box {
+    background: var(--bege-fundo);
+    padding: 15px;
+    margin: 20px 0;
+    font-weight: bold;
+    border: 2px dashed var(--vermelho);
+    color: var(--vermelho);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--bege-card);
+    color: var(--bege-dark);
+    border-top: 1px solid var(--bege-dark);
+    margin-top: 60px;
+}
+
+/* Animações */
+.reveal { animation: fadeInUp 0.8s ease forwards; }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

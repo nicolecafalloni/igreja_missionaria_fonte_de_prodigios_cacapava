@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Igreja Missionária Fonte de Prodígios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --vermelho: #8b0000;
+            --vermelho-light: #bc1823;
+            --bege-fundo: #fdfaf5; /* Bege bem clarinho para o fundo total */
+            --bege-card: #f5f2eb;  /* Bege médio para cards e seções */
+            --bege-dark: #d4c3a3;  /* Bege escuro para bordas e textos secundários */
+            --texto: #4a3b3b;      /* Marrom café bem escuro (substitui o preto para suavidade) */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bege-fundo);
+            color: var(--texto);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Refinada (Sem Preto) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(253, 250, 245, 0.9); /* Bege fundo com transparência */
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: 0.4s;
+            border-bottom: 1px solid var(--bege-dark);
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--vermelho); /* Logo em vermelho */
+        }
+
+        .nav-links a {
+            color: var(--texto);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a.active {
+            color: var(--vermelho);
+            border-bottom: 2px solid var(--vermelho);
+        }
+
+        .nav-links a:hover {
+            color: var(--vermelho-light);
+        }
+
+        /* Hero Section com Overlay Vermelho/Bege */
+        .hero {
+            height: 100vh;
+            /* Gradient suave que vai do bege ao transparente para destacar o texto */
+            background: linear-gradient(rgba(253, 250, 245, 0.8), rgba(253, 250, 245, 0.4)), 
+                        url('https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 20px;
+            color: var(--vermelho); /* Título em Vermelho */
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--texto);
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        /* Seção de Conteúdo */
+        .content-section {
+            background-color: var(--bege-card);
+            color: var(--texto);
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: var(--vermelho);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Galeria em Cards Bege */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            background: var(--white);
+            border: 1px solid var(--bege-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 70%; /* Imagem ocupa parte do card */
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            padding: 20px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .card-overlay h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: var(--vermelho);
+            text-transform: uppercase;
+        }
+
+        .card-overlay p {
+            font-size: 0.9rem;
+            color: var(--bege-dark);
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--vermelho); /* WhatsApp agora em Vermelho para combinar */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: var(--vermelho-light);
+            transform: scale(1.1);
+        }
+
+        footer {
+            padding: 50px 5%;
+            text-align: center;
+            background: var(--bege-fundo);
+            color: var(--bege-dark);
+            border-top: 1px solid var(--bege-dark);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">PRODÍGIOS</div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="membro.html">Seja Membro</a>
+            <a href="contribuicoes.html">Contribuições</a>
+            <a href="vivencias.html">Vivências</a>
+
+        </div>
+        <div class="social-icons">
+            <a href="#" style="color: var(--vermelho); margin-left: 15px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--vermelho); margin-left: 15px;"><i class="fab fa-youtube"></i></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <p>IGREJA MISSIONÁRIA</p>
+        <h1>FONTE DE<br><span style="color: var(--texto)">PRODÍGIOS</span></h1>
+        <div style="width: 60px; height: 4px; background: var(--vermelho); margin-top: 20px;"></div>
+    </header>
+
+    <section class="content-section">
+        <h2 class="section-title">Nossa Vivência</h2>
+        <div class="galeria-grid">
+            <div class="card" onclick="window.location.href='sobre.html'">
+                <img src="https://images.unsplash.com/photo-1544427920-c49ccfb85579?q=80&w=600" alt="Culto">
+                <div class="card-overlay">
+                    <h3>Cultos</h3>
+                    <p>Encontros Diários</p>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='sobre.html'">
+                <img src="https://images.unsplash.com/photo-1529070532901-ba8c310ecf5e?q=80&w=600" alt="Eventos">
+                <div class="card-overlay">
+                    <h3>Eventos</h3>
+                    <p>Comunhão e Fé</p>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='sobre.html'">
+                <img src="https://images.unsplash.com/photo-1510590333219-d7d0002181cb?q=80&w=600" alt="Sobre">
+                <div class="card-overlay">
+                    <h3>Propósitos</h3>
+                    <p>Nossa Missão em Cristo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/seunumeroaqui" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>© 2026 Igreja Missionária Fonte de Prodígios</p>
+        <p style="font-size: 0.7rem; margin-top: 10px; letter-spacing: 1px;">UMA VIDA COM PROPÓSITO</p>
+    </footer>
+
+    <script>
+        // Mudar sombra da navbar ao rolar
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.pageYOffset > 50) {
+                nav.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)";
+                nav.style.padding = "15px 5%";
+            } else {
+                nav.style.boxShadow = "none";
+                nav.style.padding = "20px 5%";
+            }
+        };
+
+        // Identificar página atual
+        const activePage = window.location.pathname.split("/").pop();
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if (link.getAttribute('href') === activePage || (activePage === "" && link.getAttribute('href') === "index.html")) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
