@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seja Membro - Fonte de Prodígios</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .membro-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
+            align-items: start;
+            margin-top: 20px;
+        }
+
+        .membro-info img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 6px solid var(--vermelho);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        /* Grid interna do formulário para encurtar o tamanho */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .full-width { grid-column: span 2; }
+
+        .section-title {
+            grid-column: span 2;
+            font-family: 'Oswald';
+            font-size: 1.1rem;
+            color: var(--vermelho);
+            margin: 15px 0 5px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .input-group { margin-bottom: 10px; }
+        .input-group label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.75rem; color: #555; }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fdfdfd;
+            font-size: 0.9rem;
+        }
+
+        /* Estilo para Radio Buttons em linha */
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding-top: 5px;
+        }
+        .radio-option { display: flex; align-items: center; gap: 5px; font-size: 0.85rem; }
+        .radio-option input { width: auto; }
+
+        .btn-membro {
+            background: var(--vermelho);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .membro-layout { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">PRODÍGIOS</div>
+        <div class="nav-links">
+            <a href="../index.html">Início</a>
+            <a href="../html/sobre.html">Sobre Nós</a>
+            <a href="../html/vivencias.html">Vivências</a>
+            <a href="../html/membro.html">Seja Membro</a>
+            <a href="../html/contribuicoes.html">Contribuições</a>
+        </div>
+    </nav>
+
+    <div class="container reveal">
+        <div class="membro-layout">
+            <div class="membro-info">
+                <h2 style="font-family: 'Oswald'; font-size: 2.5rem; color: var(--vermelho); margin-bottom: 20px;">FAÇA PARTE DA FAMÍLIA</h2>
+                <img src="../img/img-membro.jpeg" alt="Comunhão">
+                <p>Cremos que ninguém caminha sozinho. Ao se tornar membro, você assume um compromisso com Deus e com o corpo de Cristo.</p>
+            </div>
+
+            <div class="form-card">
+                <form id="formMembro" class="form-grid">
+                    
+                    <h3 class="section-title">DADOS PESSOAIS</h3>
+                    
+                    <div class="input-group full-width">
+                        <label>NOME COMPLETO</label>
+                        <input type="text" id="nome" placeholder="Ex: João Silva" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>NOME MÃE</label>
+                        <input type="text" id="nomeMae" placeholder="Nome da mãe" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>NOME PAI</label>
+                        <input type="text" id="nomePai" placeholder="Nome do pai" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>DATA NASCIMENTO</label>
+                        <input type="date" id="dataNascimento" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>TELEFONE</label>
+                        <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>SEXO</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="sexo" value="M"> Masc.</label>
+                            <label class="radio-option"><input type="radio" name="sexo" value="F"> Fem.</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>ANEXAR FOTO</label>
+                        <input type="file" id="foto" accept="image/*">
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>ENDEREÇO (CIDADE / BAIRRO)</label>
+                        <textarea id="endereco" rows="1" placeholder="Ex: São Paulo / Centro"></textarea>
+                    </div>
+
+                    <h3 class="section-title">DADOS DO MEMBRO</h3>
+
+                    <div class="input-group">
+                        <label>DATA DO BATISMO</label>
+                        <input type="date" id="dataBatismo">
+                    </div>
+
+                    <div class="input-group">
+                        <label>BATIZADO ESPÍRITO SANTO?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="batismoES" value="Sim"> Sim</label>
+                            <label class="radio-option"><input type="radio" name="batismoES" value="Não"> Não</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>IGREJA BATIZADA</label>
+                        <input type="text" id="igrejaBatizada" placeholder="Nome da igreja">
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>IGREJA ANTERIOR</label>
+                        <input type="text" id="igrejaAnterior" placeholder="Onde era membro?">
+                    </div>
+
+                    <div class="input-group">
+                        <label>CARGO ANTERIOR E DATA</label>
+                        <input type="text" id="cargo" placeholder="Ex: Obreiro, 2010">
+                    </div>
+
+                    <div class="input-group">
+                        <label>POSSUI CARTA/CARTEIRINHA?</label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="possuiDoc" value="Sim"> Sim</label>
+                            <label class="radio-option"><input type="radio" name="possuiDoc" value="Não"> Não</label>
+                        </div>
+                    </div>
+
+                    <div class="full-width">
+                        <button type="button" class="btn-membro" onclick="baixarFicha()">Finalizar e Baixar Ficha</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>© 2026 - Igreja Missionária Fonte de Prodígios</p></footer>
+
+    <script>
+        function baixarFicha() {
+            const nome = document.getElementById('nome').value;
+            if(!nome) { alert("Por favor, preencha o seu nome."); return; }
+            
+            // Lógica simples para pegar valores dos radios
+            const sexo = document.querySelector('input[name="sexo"]:checked')?.value || "Não informado";
+            
+            const texto = `FICHA DE MEMBRO - FONTE DE PRODÍGIOS\n\n` +
+                          `Nome: ${nome}\n` +
+                          `Sexo: ${sexo}\n` +
+                          `Telefone: ${document.getElementById('telefone').value}\n` +
+                          `Endereço: ${document.getElementById('endereco').value}`;
+                          
+            const blob = new Blob([texto], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = `ficha-${nome}.txt`;
+            link.click();
+        }
+    </script>
+</body>
+</html>
